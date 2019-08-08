@@ -4,7 +4,7 @@ class Boid {
     this.velocity = p5.Vector.random2D();
     this.velocity.setMag(random(2, 4));
     this.acceleration = createVector();
-    this.maxForce = 0.2;
+    this.maxForce = .2;
     this.maxSpeed = 5;
     this.perception = perception;
   }
