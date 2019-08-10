@@ -18,7 +18,7 @@ function preload() {
 function setup() {
   createCanvas(width, height);
 
-  for (let i = 0; i < 800; i++) {
+  for (let i = 0; i < 600; i++) {
     boids[i] = new Boid(random(width), random(height), perception);
   }
 
