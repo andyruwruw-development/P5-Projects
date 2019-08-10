@@ -139,12 +139,14 @@ class QuadTree {
         let sw = new Rectangle(x - w, y + h, w, h);
         this.southwest = new QuadTree(sw, this.capacity);
 
-        //this.drawSquares(ne, nw, se, sw);
+        //this.drawSquares(ne, nw, se, sw, win);
 
         this.divided = true;
     }
 
     drawSquares(ne, nw, se, sw) {
+    
+
         fill('rgba(0,0,0,0)');
         stroke('rgba(255,255,255,0.3)');
         strokeWeight(1);
