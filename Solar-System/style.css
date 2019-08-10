@@ -1,0 +1,12 @@
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+body {
+    display: block;
+    width: calc(100vw);
+    height: calc(100vh);
+    background-image: radial-gradient(rgb(24, 58, 11), rgb(0, 0, 0));
+    overflow: auto;
+}
