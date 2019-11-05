@@ -38,7 +38,7 @@ class Circle {
                 y2: 0,
             }
             const width = window.innerWidth / 2;
-            const height = window.innerHeight / 2;
+            const height = (window.innerHeight - 60) / 2;
             var angle = Math.random()*Math.PI*2;
             chord.x1 = Math.cos(angle)*this.r + width;
             chord.y1 = Math.sin(angle)*this.r + height;

@@ -1,7 +1,9 @@
 const width = window.innerWidth;
-const height = window.innerHeight;
+const height = window.innerHeight - 60;
 
 const perception = 100;
+
+let quadTreeOn = false;
 
 const boundary = new Rectangle(width / 2, height / 2, width, height);
 
@@ -16,13 +18,11 @@ function preload() {
 
 
 function setup() {
+  setupSliders();
   createCanvas(width, height);
-
-  for (let i = 0; i < 600; i++) {
+  for (let i = 0; i < 400; i++) {
     boids[i] = new Boid(random(width), random(height), perception);
   }
-
-  setupSliders();
 }
 
 
@@ -41,16 +41,29 @@ function draw() {
     boid.edges();
     boid.flock(other);
     boid.update();
-    drawCircle(view, other.length);
+    if (!quadTreeOn)
+      drawCircle(view, other.length);
     boid.show();
   }
 }
 
 function setupSliders() {
   alignSlider = createSlider(0, 2, 1.5, 0.1);
+  alignSlider.position(10, 70);
+  alignSlider.style('width', '80px');
   cohesionSlider = createSlider(0, 2, 1, 0.1);
+  cohesionSlider.position(119, 70);
+  cohesionSlider.style('width', '80px');
   separationSlider = createSlider(0, 2, 2, 0.1);
-  separationSlider = createSlider(0, 2, 2, 0.1);
+  separationSlider.position(228, 70);
+  separationSlider.style('width', '80px');
+  checkbox = createCheckbox('', false);
+  checkbox.position(347, 73);
+  checkbox.changed(quadTreeToggle);
+}
+
+function quadTreeToggle() {
+  quadTreeOn = !quadTreeOn;
 }
 
 function findReference(point) {

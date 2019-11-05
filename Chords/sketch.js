@@ -1,5 +1,5 @@
 const width = window.innerWidth;
-const height = window.innerHeight;
+const height = window.innerHeight - 60;
 
 const circle = new Circle(width / 2, height / 2, height / 2 - 50);
 
